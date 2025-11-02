@@ -20,8 +20,8 @@ import { futureProjectsData } from '../data/futureProjects';
 const CVWebsite = () => {
   const [activeSection, setActiveSection] = useState<string>(navSections[0].id);
   const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>(() =>
-    navSections.reduce<Record<string, boolean>>((acc, section, index) => {
-      acc[section.id] = index === 0;
+    navSections.reduce<Record<string, boolean>>((acc, section) => {
+      acc[section.id] = true;
       return acc;
     }, {})
   );
@@ -29,13 +29,7 @@ const CVWebsite = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!('IntersectionObserver' in window)) {
-      setVisibleSections(
-        navSections.reduce<Record<string, boolean>>((acc, section) => {
-          acc[section.id] = true;
-          return acc;
-        }, {})
-      );
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
       return;
     }
 
@@ -81,7 +75,9 @@ const CVWebsite = () => {
 
   const handleNavClick = (sectionId: string) => {
     setActiveSection(sectionId);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleProjectClick = (index: number) => {
