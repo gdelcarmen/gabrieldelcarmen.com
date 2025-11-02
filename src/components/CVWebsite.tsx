@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './layout/Header';
 import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
@@ -19,11 +19,26 @@ import { futureProjectsData } from '../data/futureProjects';
 
 const CVWebsite = () => {
   const [activeSection, setActiveSection] = useState<string>(navSections[0].id);
-  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
+  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>(() =>
+    navSections.reduce<Record<string, boolean>>((acc, section, index) => {
+      acc[section.id] = index === 0;
+      return acc;
+    }, {})
+  );
   const [showTimeline, setShowTimeline] = useState(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      setVisibleSections(
+        navSections.reduce<Record<string, boolean>>((acc, section) => {
+          acc[section.id] = true;
+          return acc;
+        }, {})
+      );
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
