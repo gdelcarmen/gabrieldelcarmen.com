@@ -9,7 +9,15 @@ const AboutSection = ({ isVisible }: SectionProps) => (
   >
     <h2 className="text-xl font-light text-gray-800 pb-3 mb-5 border-b border-gray-100">About</h2>
     <p className="text-gray-600 leading-relaxed font-light">
-      I am a surgical resident deeply committed to advancing patient-centered care through surgical excellence and medical ethics, with a strong dedication to reducing disparities in healthcare quality and access. My interests include developing, refining, and promoting the responsible adoption of artificial intelligence tools to augment patient-centered care and improve clinical outcomes. Passionate about the ethical integration of AI in medicine, I aim to ensure these technologies enhance patient experiences without compromising humanistic care. My professional aspiration is to actively contribute to a collaborative, academically rigorous environment that prioritizes innovation, equitable healthcare, and continuous progress in surgery and medical education.
+      I am an academic-minded general surgery resident focused on blending translational research, outcomes science, and
+      compassionate surgical care. My work centers on creating equitable systems that elevate patient voices, whether by
+      redesigning clinical trials for inclusivity, using natural language processing to surface disparities, or
+      strengthening mentorship pathways for future surgeons.
+    </p>
+    <p className="text-gray-600 leading-relaxed font-light mt-3">
+      Across every project I prioritize ethical reflection and responsible innovation—particularly in the integration of
+      artificial intelligence. I am motivated by collaborative environments where rigorous science, patient advocacy, and
+      thoughtful leadership move surgical oncology forward.
     </p>
   </section>
 );

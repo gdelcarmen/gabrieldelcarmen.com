@@ -13,7 +13,11 @@ const ContactSection = ({ isVisible }: SectionProps) => (
               <span className="text-gray-900">Email:</span> <a href="mailto:delcarg@amc.edu" className="text-gray-600 hover:text-gray-900 transition-colors">delcarg@amc.edu</a>
             </p>
             <p className="text-sm text-gray-600 font-light">
-              <span className="text-gray-900">Location:</span> Albany, NY
+              <span className="text-gray-900">Phone:</span>{' '}
+              <a href="tel:18173076735" className="text-gray-600 hover:text-gray-900 transition-colors">817-307-6735</a>
+            </p>
+            <p className="text-sm text-gray-600 font-light">
+              <span className="text-gray-900">Location:</span> 745 Broadway Unit 218, Albany, NY 12208
             </p>
             <p className="text-sm text-gray-600 font-light">
               <span className="text-gray-900">ORCID:</span> <a href="https://orcid.org/0000-0002-1857-8404" target="_blank" className="text-gray-600 hover:text-gray-900 transition-colors flex items-center">

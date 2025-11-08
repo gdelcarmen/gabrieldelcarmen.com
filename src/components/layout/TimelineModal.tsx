@@ -2,6 +2,8 @@ interface TimelineModalProps {
   onClose: () => void;
 }
 
+const timelineYears = [2015, 2017, 2019, 2020, 2021, 2023, 2024, 2025, 2026];
+
 const TimelineModal = ({ onClose }: TimelineModalProps) => (
   <div className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-gray-800 bg-opacity-70">
     <div className="relative max-w-4xl w-full rounded-lg p-6 shadow-xl bg-white">
@@ -20,8 +22,12 @@ const TimelineModal = ({ onClose }: TimelineModalProps) => (
       <div className="overflow-x-auto">
         <div className="min-w-max">
           <div className="h-1 bg-gray-200 relative mb-8">
-            {[2015, 2017, 2019, 2020, 2021, 2023, 2024, 2025].map((year, index) => (
-              <div key={year} className="absolute transform -translate-x-1/2" style={{ left: `${index * 14.28}%` }}>
+            {timelineYears.map((year, index) => (
+              <div
+                key={year}
+                className="absolute transform -translate-x-1/2"
+                style={{ left: `${(index / (timelineYears.length - 1)) * 100}%` }}
+              >
                 <div className="h-3 w-3 rounded-full bg-blue-500 mb-2"></div>
                 <span className="text-xs text-gray-600">{year}</span>
               </div>
@@ -54,6 +60,28 @@ const TimelineModal = ({ onClose }: TimelineModalProps) => (
             <div className="col-span-2 p-3 rounded bg-red-50">
               <h3 className="text-sm font-medium text-gray-800">Vilar Lab, MD Anderson</h3>
               <p className="text-xs text-gray-600">2021-2024</p>
+            </div>
+
+            <div className="col-span-2 p-3 rounded bg-indigo-50">
+              <h3 className="text-sm font-medium text-gray-800">Transplant Outcomes Research</h3>
+              <p className="text-xs text-gray-600">2021-2024</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-7 gap-4 mt-4">
+            <div className="col-span-2 p-3 rounded bg-orange-50">
+              <h3 className="text-sm font-medium text-gray-800">AI & Ethics Scholarship</h3>
+              <p className="text-xs text-gray-600">2023-2025</p>
+            </div>
+
+            <div className="col-span-2 p-3 rounded bg-teal-50">
+              <h3 className="text-sm font-medium text-gray-800">Trauma Guidelines App</h3>
+              <p className="text-xs text-gray-600">Oct 2025</p>
+            </div>
+
+            <div className="col-span-2 p-3 rounded bg-pink-50">
+              <h3 className="text-sm font-medium text-gray-800">DrainBow Prototype</h3>
+              <p className="text-xs text-gray-600">Nov 2025</p>
             </div>
           </div>
         </div>

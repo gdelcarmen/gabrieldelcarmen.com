@@ -3,6 +3,7 @@ import Header from './layout/Header';
 import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
 import TimelineModal from './layout/TimelineModal';
+import CurrentPositionSection from './sections/CurrentPositionSection';
 import EducationSection from './sections/EducationSection';
 import AboutSection from './sections/AboutSection';
 import PublicationsSection from './sections/PublicationsSection';
@@ -96,6 +97,7 @@ const CVWebsite = () => {
       <Navigation sections={navSections} activeSection={activeSection} onNavigate={handleNavClick} />
 
       <main className="max-w-4xl mx-auto px-6 py-12">
+        <CurrentPositionSection isVisible={isSectionVisible('current')} />
         <EducationSection isVisible={isSectionVisible('education')} />
         <AboutSection isVisible={isSectionVisible('about')} />
         <PublicationsSection isVisible={isSectionVisible('publications')} />
