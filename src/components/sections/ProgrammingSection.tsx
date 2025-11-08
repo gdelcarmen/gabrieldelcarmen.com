@@ -29,108 +29,75 @@ const ProgrammingSection = ({ isVisible }: SectionProps) => (
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Project 1: Surgic.AI */}
             <Tooltip
               content={
                 <div>
-                  <h4 className="font-medium mb-2">Surgic.AI - Enterprise Initiative</h4>
-                  <p className="mb-2">An enterprise focused on developing and deploying cutting-edge machine learning solutions tailored for medicine and surgery.</p>
-                  <p className="mb-2">Core Goals:</p>
+                  <h4 className="font-medium mb-2">Trauma Practice Management Guidelines</h4>
+                  <p className="mb-2">
+                    SwiftUI application centralizing Albany Medical Center&apos;s trauma practice management guidelines for rapid
+                    bedside reference.
+                  </p>
+                  <p className="mb-2">Key capabilities include:</p>
                   <ul className="list-disc pl-4 mb-2">
-                    <li>Enhance medical/surgical learning through AI tools.</li>
-                    <li>Improve the delivery of high-quality patient care.</li>
-                    <li>Mitigate physician burden through intelligent automation and support.</li>
-                    <li>Uphold rigorous ethical standards and patient safety in all applications.</li>
+                    <li>Offline-first architecture with locally cached guideline content organized by specialty.</li>
+                    <li>Global search with highlighted results to expedite decision-making.</li>
+                    <li>Responsive typography and color cues to differentiate urgency and procedural steps.</li>
+                    <li>Collaboration with institutional trauma leadership to ensure version control and governance.</li>
                   </ul>
-                  <p>Projects like Rounder and Synthetic CXR Generation fall under the Surgic.AI framework.</p>
+                  <p>Released October 2025 to support consistent trauma coverage across services.</p>
                 </div>
               }
               position="bottom"
               width="max-w-md"
             >
               <div className="bg-gray-50 p-5 rounded-lg transition-all hover:shadow-md cursor-help">
-                <h3 className="text-base font-medium text-gray-900 mb-2">Surgic.AI</h3>
-                <p className="text-sm text-gray-600 font-light mb-3">Enterprise initiative providing ML solutions to enhance learning and patient care in medicine/surgery.</p>
+                <h3 className="text-base font-medium text-gray-900 mb-2">Trauma Practice Management Guidelines</h3>
+                <p className="text-sm text-gray-600 font-light mb-3">
+                  SwiftUI app delivering searchable, offline trauma protocols for Albany Medical Center clinicians.
+                </p>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full">AI/ML</span>
-                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">Healthcare Tech</span>
-                  <span className="bg-red-50 text-red-700 text-xs px-2 py-1 rounded-full">Enterprise</span>
-                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Surgery</span>
+                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">SwiftUI</span>
+                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Clinical Operations</span>
+                  <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full">Offline-First</span>
                 </div>
-                {/* <a href="https://github.com/[Your-GitHub-Username]/surgic-ai" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">View Project →</a> */}
-                <span className="text-sm text-gray-400">Website coming soon</span>
+                <span className="text-sm text-gray-400">Internal distribution</span>
               </div>
             </Tooltip>
 
-            {/* Project 2: Rounder App */}
             <Tooltip
               content={
                 <div>
-                  <h4 className="font-medium mb-2">Rounder - Clinical Workflow App</h4>
-                  <p className="mb-2">Mobile application designed to streamline clinical rounds documentation while maintaining HIPAA compliance.</p>
-                  <p className="mb-2">Key Features:</p>
+                  <h4 className="font-medium mb-2">DrainBow</h4>
+                  <p className="mb-2">
+                    Minimal viable product capturing drain photos, performing on-device color detection, and logging trends to
+                    support postoperative monitoring.
+                  </p>
+                  <p className="mb-2">Feature highlights:</p>
                   <ul className="list-disc pl-4 mb-2">
-                    <li>Voice-to-text note capture during rounds.</li>
-                    <li>Automatic formatting of notes into SOAP structure.</li>
-                    <li>Secure patient list creation via encrypted photo capture (OCR-based).</li>
-                    <li>Automatic assignment of notes to corresponding patients.</li>
-                    <li>Focus on hands-off operation to prioritize patient interaction.</li>
-                    <li>Ensures data privacy and security according to HIPAA standards.</li>
+                    <li>Secure photo capture workflow mapped to individual drains with timestamped entries.</li>
+                    <li>Color analysis rendered as &ldquo;rainbow&rdquo; visualization alongside volume data to surface concerning shifts.</li>
+                    <li>Local-first storage with exportable logs for integration into care team handoffs.</li>
+                    <li>Designed with surgical faculty to reduce cognitive load during high-volume rounds.</li>
                   </ul>
-                  <p>Currently under active development.</p>
+                  <p>Prototype completed November 2025; exploring institutional pilot opportunities.</p>
                 </div>
               }
               position="bottom"
               width="max-w-md"
             >
               <div className="bg-gray-50 p-5 rounded-lg transition-all hover:shadow-md cursor-help">
-                <h3 className="text-base font-medium text-gray-900 mb-2">Rounder App</h3>
-                <p className="text-sm text-gray-600 font-light mb-3">HIPAA-compliant app for efficient rounds notes (voice-to-SOAP, patient list photos).</p>
+                <h3 className="text-base font-medium text-gray-900 mb-2">DrainBow</h3>
+                <p className="text-sm text-gray-600 font-light mb-3">
+                  Local-first drain tracking app pairing color analytics with volume logs to spotlight postoperative changes.
+                </p>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">Mobile App</span>
-                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Clinical Workflow</span>
-                  <span className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded-full">AI/ML</span>
-                  <span className="bg-red-50 text-red-700 text-xs px-2 py-1 rounded-full">HIPAA</span>
+                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">SwiftUI</span>
+                  <span className="bg-pink-50 text-pink-700 text-xs px-2 py-1 rounded-full">Computer Vision</span>
+                  <span className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded-full">On-Device ML</span>
                 </div>
-                <span className="text-sm text-gray-400">Preview coming soon</span>
+                <span className="text-sm text-gray-400">Prototype stage</span>
               </div>
             </Tooltip>
-
-            {/* Project 3: Synthetic CXR Generation */}
-            <Tooltip
-              content={
-                <div>
-                  <h4 className="font-medium mb-2">Synthetic Chest X-Ray (CXR) Generation</h4>
-                  <p className="mb-2">AI-powered tool to generate high-fidelity, anatomically accurate synthetic chest X-ray images for medical education.</p>
-                  <p className="mb-2">Project Goals:</p>
-                  <ul className="list-disc pl-4 mb-2">
-                    <li>Provide a diverse and extensive dataset for training residents and medical students.</li>
-                    <li>Generate images depicting various common and rare pathologies.</li>
-                    <li>Allow for controllable parameters to simulate different patient scenarios.</li>
-                    <li>Benchmark generative models (like GANs or Diffusion models) against real CXR datasets (e.g., VinDr-CXR) for fidelity.</li>
-                    <li>Integrate with educational platforms for interactive learning modules.</li>
-                  </ul>
-                  <p>Focuses on improving radiological interpretation skills without relying solely on limited real patient data.</p>
-                </div>
-              }
-              position="bottom"
-              width="max-w-md"
-            >
-              <div className="bg-gray-50 p-5 rounded-lg transition-all hover:shadow-md cursor-help">
-                <h3 className="text-base font-medium text-gray-900 mb-2">Synthetic CXR Generation</h3>
-                <p className="text-sm text-gray-600 font-light mb-3">AI tool generating realistic synthetic CXRs for medical education and training.</p>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full">AI/ML</span>
-                  <span className="bg-orange-50 text-orange-700 text-xs px-2 py-1 rounded-full">Generative Models</span>
-                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">Medical Education</span>
-                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Radiology</span>
-                </div>
-                <span className="text-sm text-gray-400">Preview coming soon</span>
-              </div>
-            </Tooltip>
-
-            {/* Add more projects as needed */}
-
           </div>
         </section>
 );

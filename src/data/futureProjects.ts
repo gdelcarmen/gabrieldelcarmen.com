@@ -1,87 +1,101 @@
 export const futureProjectsData = [
   {
-    title: 'NLP Analysis of Online Bariatric & Weight Loss Communities (Reddit)',
+    title: 'A Property-Based Framework for Evaluating the Onset of Moral Status',
     summary:
-      'Comparing patient experiences and attitudes towards bariatric surgery vs. weight loss medication using NLP on Reddit data.',
+      'Developing a philosophical framework that assesses when moral status emerges using property-based criteria instead of categorical thresholds.',
     description:
-      'Utilizing Natural Language Processing (NLP) and Machine Learning (ML) to analyze user-generated content on Reddit communities (e.g., r/bariatricsurgery, r/Ozempic) dedicated to Roux-en-Y gastric bypass, sleeve gastrectomy, and semaglutide.',
+      'Extends contemporary bioethical discourse by formalizing a property-based approach to moral status, scrutinizing classical conceptions such as the Conception view and mapping implications for policy.',
     components: [
-      'Large-scale data extraction and preprocessing from relevant subreddits.',
-      'Application of NLP for sentiment analysis, subjectivity scoring, and topic modeling (LDA).',
-      'Comparative analysis of discussions surrounding surgical vs. pharmacological weight loss.',
-      'Identification of frequently discussed adverse effects, patient concerns (pre/post-intervention), and themes of peer support.',
+      'Defines necessary and sufficient conditions that any proposed property must meet to confer moral status.',
+      'Applies the framework to fertilization, brain development, and other milestone events in clinical ethics debates.',
+      'Explores downstream implications for abortion, organ allocation, and end-of-life decision-making.',
+      'Situates the proposal within broader moral philosophy and bioethics literature to anticipate critiques.',
     ],
-    status: 'Initial analyses complete. Manuscript in final preparation stages.',
+    status: 'Manuscript submitted to Bioethics (October 2025).',
   },
   {
-    title: 'Accuracy of AI Translation Tools in Spanish Neurology',
+    title: 'Bridging the Communication Gap: Evaluating Google Translate and GPT-4o in Neurology',
     summary:
-      'Comparing Google Translate vs. GPT-4o for translating English neurology questions to Spanish for patients with limited English proficiency.',
+      'Head-to-head comparison of automated translation tools for English-to-Spanish neurologic assessments among patients with limited English proficiency.',
     description:
-      'Comparative analysis evaluating the accuracy and clinical appropriateness of AI translation tools (Google Translate and GPT-4o) for common English-to-Spanish clinical questions used in neurologic assessments.',
+      'Assesses the safety and clinical fidelity of AI-driven translation by benchmarking Google Translate and GPT-4o outputs against certified medical interpreters for common neurology encounters.',
     components: [
-      'Evaluation of 120+ standard neurological phrases translated by Google Translate and GPT-4o.',
-      'Assessment by bilingual neurologists for clinical accuracy and potential risk.',
-      'Analysis of consistency, formality (usted vs. tú), and error patterns.',
-      'Calculation of inter-rater reliability (PABAK scores).',
+      'Curated corpus of 120+ neurological phrases spanning examination instructions, counseling, and informed consent.',
+      'Dual-review by bilingual neurologists evaluating accuracy, register (usted vs. tú), and clinical risk.',
+      'Error taxonomy mapping mistranslations to potential patient safety hazards.',
+      'Recommendations for institutional deployment of translation support in neurology clinics.',
     ],
-    status: 'Manuscript submitted.',
+    status: 'Submitted to Patient Education and Counseling (February 2025) and currently under review.',
   },
   {
-    title: 'Property-Based Framework for Moral Status Onset',
+    title: 'A Review of the Immunological Landscape for Pre-Cancerous Colorectal Lesions',
     summary:
-      'Philosophical analysis proposing and applying a framework to evaluate claims about the beginning of moral status.',
+      'Comprehensive scoping review of immunological mechanisms driving progression from precursor lesions to colorectal malignancy.',
     description:
-      'Philosophical essay proposing a novel framework to assess claims about when moral status begins, critically evaluating the “Conception view” often used in abortion ethics debates.',
+      'Synthesizes multi-omic and translational research to map the immune microenvironment of pre-cancerous colorectal lesions, highlighting opportunities for chemoprevention and targeted surveillance.',
     components: [
-      'Defines three necessary conditions (Antecedent, Shared, Necessity/Sufficiency) for a property P to establish moral onset.',
-      'Analyzes candidates for P (e.g., genetic uniqueness, causal trajectory) under the Conception view.',
-      'Argues fertilization fails to meet the criteria, challenging its designation as the definitive point of moral onset.',
-      'Applies the framework to other bioethical dilemmas (e.g., brain death).',
+      'Systematic extraction of immunologic markers implicated in Lynch Syndrome and sporadic colorectal neoplasia.',
+      'Comparison of innate and adaptive immune responses across lesion types and disease stages.',
+      'Identification of therapeutic targets and gaps ripe for translational investigation.',
+      'Roadmap for integrating immunoprofiling into longitudinal surveillance protocols.',
     ],
-    status: 'Manuscript submitted.',
+    status: 'Literature synthesis in progress; manuscript drafting underway.',
   },
   {
-    title: 'Implicit Bias Assessment in Clinical LLMs',
+    title: 'Pre-Operative Concerns and Post-Operative Satisfaction: Bariatric Surgery vs. Medication for Weight Loss on Reddit',
     summary:
-      'Evaluating if LLMs (GPT-4o) show bias in responses to clinical vignettes based on patient demographics.',
+      'Natural language processing analysis of online communities discussing bariatric surgery compared with pharmacologic weight-loss interventions.',
     description:
-      'Investigates whether a widely used LLM (GPT-4o) exhibits implicit biases when responding to clinical vignettes with varying patient characteristics (race, gender, socioeconomic status).',
+      'Leverages Reddit discourse to understand patient expectations and satisfaction across surgical and medical weight-loss pathways, informing patient education and shared decision-making.',
     components: [
-      'Development of structured clinical vignettes (Base, Bias, Benign variations) across different specialties.',
-      'Analysis of LLM responses using API calls under different determinism settings (temperature 0.2 vs. 0.8).',
-      'Qualitative and quantitative assessment of response variations linked to demographic cues.',
-      'Comparison with human clinician responses (planned).',
+      'Dataset construction from subreddit communities focused on bariatric surgery and GLP-1 medications.',
+      'Sentiment, subjectivity, and topic modeling to differentiate pre-operative concerns and post-intervention reflections.',
+      'Comparative analysis of perceived risks, support structures, and satisfaction trajectories.',
+      'Alignment of qualitative insights with emerging clinical trial data to contextualize patient narratives.',
     ],
-    status: 'Vignette development complete. Initial LLM response data collected. Analysis ongoing.',
+    status: 'Manuscript in progress; abstract under review for SAGES 2026.',
   },
   {
-    title: 'Ethical Frameworks for Autonomous AI in Healthcare',
+    title: 'Benchmarking Robust Computer Vision Models for Radiological Interpretation',
     summary:
-      'Investigating moral complexities, accountability, and empathy concerning autonomous AI in clinical decision-making.',
+      'Evaluating GPT-4o Vision and comparator models on chest X-ray interpretation using zero-shot, one-shot, and few-shot paradigms.',
     description:
-      'Ethical analysis exploring the challenges of integrating autonomous AI into healthcare, focusing on accountability, empathy, and patient-centered values.',
+      'Benchmarks multimodal large language models against established radiology datasets to characterize diagnostic accuracy, calibration, and failure modes in thoracic imaging.',
     components: [
-      'Examination of AI alignment with core medical ethics principles (autonomy, beneficence, etc.).',
-      'Analysis of the “many hands” problem and responsibility gaps for AI errors.',
-      'Discussion of simulated vs. genuine AI empathy and its ethical implications.',
-      'Development of policy and practice recommendations for responsible AI adoption.',
+      'VinDr-CXR dataset curation with balanced representation of common thoracic pathologies.',
+      'Prompt engineering experiments testing varying context windows and clinical histories.',
+      'Performance comparison across zero/one/few-shot configurations with detailed error analysis.',
+      'Framework for future deployment guidelines in surgical and critical care settings.',
     ],
-    status: 'Literature review and conceptual framework development ongoing. Preparing commentary/perspective piece.',
+    status: 'Accepted for oral presentation at the 23rd Annual Academic Surgical Congress (2026).',
   },
   {
-    title: 'Benchmarking Computer Vision Models in Radiology (CXR)',
+    title: 'Assessing Implicit Bias in the Clinical Decision-Making of Large Language Models',
     summary:
-      'Evaluating GPT-4oV’s diagnostic performance on chest X-rays using zero/one/few-shot learning.',
+      'Interrogating GPT-4o clinical recommendations across diverse patient demographics to surface implicit bias.',
     description:
-      'Evaluates the diagnostic performance of OpenAI’s GPT-4 Vision (GPT-4oV) model on interpreting chest X-rays (CXRs) using the VinDr-CXR dataset.',
+      'Constructs structured clinical vignettes with demographic variations to evaluate how stochasticity and prompt design influence AI-generated care plans.',
     components: [
-      'Systematic testing using OpenAI’s API under zero-shot, one-shot (with normal CXR comparison), and contextual learning (with clinical history) conditions.',
-      'Calculation of key performance metrics (accuracy, recall, precision, F1, NPV).',
-      'Analysis across different pathologies vs. radiologist consensus.',
-      'Prompt engineering experiments to optimize performance.',
+      'Creation of baseline, bias-testing, and benign vignettes across high-yield surgical scenarios.',
+      'Comparison of deterministic and higher-temperature outputs to assess variability and bias expression.',
+      'Qualitative review of safety-critical deviations and recommendations for guardrail development.',
+      'Planned comparison against resident and attending surgeon responses for contextual benchmarking.',
     ],
-    status: 'Data acquisition and preprocessing complete. API integration developed. Main experimental runs in progress.',
+    status: 'Accepted for oral presentation at the 23rd Annual Academic Surgical Congress (2026).',
+  },
+  {
+    title: 'Multimodal Agentic Retrieval for Clinical Utility and Synthesis (MARCUS)',
+    summary:
+      'Designing a retrieval-augmented generation system to centralize residency information and streamline onboarding.',
+    description:
+      'Combines structured program data, institutional policies, and resident-generated knowledge into a multimodal assistant that reduces onboarding friction and preserves institutional memory.',
+    components: [
+      'Hybrid knowledge graph linking documents, videos, and workflows relevant to surgical residency training.',
+      'Agentic orchestration pipeline coordinating retrieval, synthesis, and recommendation modules.',
+      'Evaluation rubric measuring accuracy, timeliness, and perceived utility among resident beta testers.',
+      'Deployment roadmap aligned with institutional governance and data privacy requirements.',
+    ],
+    status: 'Manuscript in development; abstract pending submission to SAGES Emerging Technology 2026.',
   },
 ];
 
