@@ -11,7 +11,7 @@ export const futureProjectsData = [
       'Comparative analysis of discussions surrounding surgical vs. pharmacological weight loss.',
       'Identification of frequently discussed adverse effects, patient concerns (pre/post-intervention), and themes of peer support.',
     ],
-    status: 'Initial analyses complete. Manuscript in final preparation stages.',
+    status: 'Manuscript in progress. Abstract submitted to SAGES 2026 (Under Review).',
   },
   {
     title: 'Accuracy of AI Translation Tools in Spanish Neurology',
@@ -25,7 +25,7 @@ export const futureProjectsData = [
       'Analysis of consistency, formality (usted vs. tú), and error patterns.',
       'Calculation of inter-rater reliability (PABAK scores).',
     ],
-    status: 'Manuscript submitted.',
+    status: 'Manuscript under review at Patient Education and Counseling.',
   },
   {
     title: 'Property-Based Framework for Moral Status Onset',
@@ -53,7 +53,7 @@ export const futureProjectsData = [
       'Qualitative and quantitative assessment of response variations linked to demographic cues.',
       'Comparison with human clinician responses (planned).',
     ],
-    status: 'Vignette development complete. Initial LLM response data collected. Analysis ongoing.',
+    status: 'Abstract accepted for ASC 23rd Annual Conference. Manuscript in progress.',
   },
   {
     title: 'Ethical Frameworks for Autonomous AI in Healthcare',
@@ -81,7 +81,22 @@ export const futureProjectsData = [
       'Analysis across different pathologies vs. radiologist consensus.',
       'Prompt engineering experiments to optimize performance.',
     ],
-    status: 'Data acquisition and preprocessing complete. API integration developed. Main experimental runs in progress.',
+    status: 'Abstract accepted for ASC 23rd Annual Conference. Main experimental runs complete.',
+  },
+  {
+    title: 'Multimodal Agentic Retrieval for Clinical Utility and Synthesis (MARCUS)',
+    summary:
+      'A Retrieval Augmented Generation system designed to centralize residency program information and provide instant, accurate responses to program-related queries.',
+    description:
+      'MARCUS is an advanced RAG (Retrieval Augmented Generation) system that consolidates diverse residency information sources into a unified, searchable knowledge base, enabling residents to quickly access critical information about rotations, schedules, policies, and resources.',
+    components: [
+      'Integration of multiple data sources (emails, PDFs, spreadsheets, web resources).',
+      'Implementation of vector databases for semantic search capabilities.',
+      'Development of multi-modal retrieval for text, images, and structured data.',
+      'Fine-tuned response generation for residency-specific queries.',
+      'User-friendly interface for natural language queries.',
+    ],
+    status: 'System architecture designed. Pending submission to SAGES Emerging Technology 2026.',
   },
 ];
 

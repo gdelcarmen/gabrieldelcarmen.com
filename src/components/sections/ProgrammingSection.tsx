@@ -129,7 +129,70 @@ const ProgrammingSection = ({ isVisible }: SectionProps) => (
               </div>
             </Tooltip>
 
-            {/* Add more projects as needed */}
+            {/* Project 4: Trauma Practice Management Guidelines */}
+            <Tooltip
+              content={
+                <div>
+                  <h4 className="font-medium mb-2">Trauma Practice Management Guidelines</h4>
+                  <p className="mb-2">SwiftUI application that centralizes Albany Medical Center's trauma practice management guidelines into a single, searchable, offline-capable reference.</p>
+                  <p className="mb-2">Key Features:</p>
+                  <ul className="list-disc pl-4 mb-2">
+                    <li>Designed for quick bedside retrieval with clear sectioning and ease of retrieval.</li>
+                    <li>Offline-capable for use in any clinical setting.</li>
+                    <li>Searchable interface for rapid access to specific guidelines.</li>
+                    <li>Developed in collaboration with Dr. Kurt Edwards.</li>
+                  </ul>
+                  <p>Developed October 2025 using SwiftUI and XCode.</p>
+                </div>
+              }
+              position="bottom"
+              width="max-w-md"
+            >
+              <div className="bg-gray-50 p-5 rounded-lg transition-all hover:shadow-md cursor-help">
+                <h3 className="text-base font-medium text-gray-900 mb-2">Trauma Practice Management Guidelines</h3>
+                <p className="text-sm text-gray-600 font-light mb-3">SwiftUI app centralizing trauma guidelines for quick bedside reference.</p>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">SwiftUI</span>
+                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Mobile App</span>
+                  <span className="bg-red-50 text-red-700 text-xs px-2 py-1 rounded-full">Trauma</span>
+                  <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full">Clinical Reference</span>
+                </div>
+                <span className="text-sm text-gray-400">Developed October 2025</span>
+              </div>
+            </Tooltip>
+
+            {/* Project 5: DrainBow */}
+            <Tooltip
+              content={
+                <div>
+                  <h4 className="font-medium mb-2">DrainBow</h4>
+                  <p className="mb-2">Minimally working product that captures bedside photos of drain output, performs on-device color detection, and logs output with associated drain number.</p>
+                  <p className="mb-2">Key Features:</p>
+                  <ul className="list-disc pl-4 mb-2">
+                    <li>Captures bedside photos of drain output.</li>
+                    <li>On-device color detection for accurate tracking.</li>
+                    <li>"Rainbow" visualization displaying drain output color over time next to volume entries.</li>
+                    <li>Surfaces trend shifts for clinical decision-making.</li>
+                    <li>Local-first data models with exportable logs.</li>
+                  </ul>
+                  <p>Developed November 2025 using SwiftUI and XCode.</p>
+                </div>
+              }
+              position="bottom"
+              width="max-w-md"
+            >
+              <div className="bg-gray-50 p-5 rounded-lg transition-all hover:shadow-md cursor-help">
+                <h3 className="text-base font-medium text-gray-900 mb-2">DrainBow</h3>
+                <p className="text-sm text-gray-600 font-light mb-3">Mobile app for tracking surgical drain output with color detection and visualization.</p>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">SwiftUI</span>
+                  <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">Mobile App</span>
+                  <span className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded-full">Computer Vision</span>
+                  <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full">Clinical Workflow</span>
+                </div>
+                <span className="text-sm text-gray-400">Developed November 2025</span>
+              </div>
+            </Tooltip>
 
           </div>
         </section>

@@ -16,6 +16,8 @@ const SkillsSection = ({ isVisible }: SectionProps) => (
               <span className="text-sm text-gray-600 font-light">RedCap</span>
               <span className="text-sm text-gray-600 font-light">EPIC</span>
               <span className="text-sm text-gray-600 font-light">Python</span>
+              <span className="text-sm text-gray-600 font-light">Java</span>
+              <span className="text-sm text-gray-600 font-light">HTML</span>
               <span className="text-sm text-gray-600 font-light">Microsoft Access</span>
               <span className="text-sm text-gray-600 font-light">IRB Submissions</span>
             </div>
@@ -34,9 +36,9 @@ const SkillsSection = ({ isVisible }: SectionProps) => (
           <div>
             <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Interests</h3>
             <ul className="text-sm text-gray-600 font-light space-y-1">
-              <li>• Creative writing: Self-published science fiction and horror fiction</li>
-              <li>• Reading: Horror fiction and philosophical literature</li>
-              <li>• Music production: Compositions using FL Studio and MIDI synthesizers</li>
+              <li>• Creative writing: Written and self-published science fiction and horror fiction stories, with independent narrators broadcasting stories to wide audiences online</li>
+              <li>• Reading: Fond of horror fiction, particularly Stephen King; among nonfiction, enjoy philosophical and existentialist literature, with an interest in works by Sartre, Camus, and Epictetus</li>
+              <li>• Music production: Composes melodies and instrumental pieces using FL Studio and MIDI synthesizers, with a focus on low-fidelity compositions</li>
             </ul>
           </div>
         </section>
