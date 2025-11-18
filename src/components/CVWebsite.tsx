@@ -4,6 +4,7 @@ import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
 import TimelineModal from './layout/TimelineModal';
 import EducationSection from './sections/EducationSection';
+import LicensureSection from './sections/LicensureSection';
 import AboutSection from './sections/AboutSection';
 import PublicationsSection from './sections/PublicationsSection';
 import ResearchSection from './sections/ResearchSection';
@@ -97,6 +98,7 @@ const CVWebsite = () => {
 
       <main className="max-w-4xl mx-auto px-6 py-12">
         <EducationSection isVisible={isSectionVisible('education')} />
+        <LicensureSection isVisible={isSectionVisible('licensure')} />
         <AboutSection isVisible={isSectionVisible('about')} />
         <PublicationsSection isVisible={isSectionVisible('publications')} />
         <ResearchSection isVisible={isSectionVisible('research')} />
