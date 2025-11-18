@@ -287,7 +287,7 @@ const PublicationsSection = ({ isVisible }: SectionProps) => (
                 position="bottom"
                 width="max-w-md"
               >
-                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>. A Property-Based Framework for Evaluating the Onset of Moral Status. <em>Bioethics</em>. 2025 Mar 12. Submitted.</li>
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>. A Property-Based Framework for Evaluating the Onset of Moral Status. <em>Bioethics</em>. 2025 Oct 10. Submitted.</li>
               </Tooltip>
               
               <Tooltip
@@ -517,6 +517,55 @@ const PublicationsSection = ({ isVisible }: SectionProps) => (
                 width="max-w-md"
               >
                 <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, et al. Impact of Hispanic Ethnicity on Colorectal Cancer Surveillance Outcomes and Management in an Institutional Longitudinal Cohort of Lynch Syndrome Patients. <em>MD Anderson Summer Experience</em>; 2021; Houston, TX.</li>
+              </Tooltip>
+            </ul>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Upcoming Conference Presentations (Accepted)</h3>
+            <ul className="space-y-4 text-sm text-gray-600 font-light">
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Benchmarking Robust Computer Vision Models: GPT's Vision Capabilities in Radiological Interpretation of Chest X-Rays</h4>
+                    <p className="mb-2">This study evaluates GPT-4 Vision's diagnostic performance on chest X-rays using zero-shot, one-shot, and few-shot learning approaches.</p>
+                    <p className="mb-2">Methods:</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Systematic testing using OpenAI's API with VinDr-CXR dataset.</li>
+                      <li>Comparison across zero-shot, one-shot (with normal CXR), and contextual learning conditions.</li>
+                      <li>Calculation of accuracy, recall, precision, F1, and NPV metrics.</li>
+                      <li>Analysis across different pathologies versus radiologist consensus.</li>
+                    </ul>
+                    <p className="mb-2">Findings: Performance varied significantly based on learning approach and pathology type, with contextual information improving diagnostic accuracy.</p>
+                    <p>Accepted for presentation at the 23rd Annual Academic Surgical Congress.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Chen C, Shahbazov R. Benchmarking Robust Computer Vision Models: GPT's Vision Capabilities in Radiological Interpretation of Chest X-Rays with Zero-Shot, One-Shot, and Few-Shot Learning. <em>Annual Academic Surgical Congress</em>. 23rd Annual Conference. Accepted.</li>
+              </Tooltip>
+
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Assessing Implicit Bias in the Clinical Decision-Making of Large Language Models</h4>
+                    <p className="mb-2">This research investigates whether large language models exhibit implicit biases when responding to clinical vignettes based on patient demographics.</p>
+                    <p className="mb-2">Methods:</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Development of structured clinical vignettes with varying patient demographics (race, gender, socioeconomic status).</li>
+                      <li>Analysis of GPT-4o responses using API calls at different temperature settings.</li>
+                      <li>Qualitative and quantitative assessment of response variations linked to demographic cues.</li>
+                      <li>Comparison of Base, Bias, and Benign vignette variations.</li>
+                    </ul>
+                    <p className="mb-2">Implications: Understanding bias in AI clinical decision support is crucial for equitable healthcare delivery.</p>
+                    <p>Accepted for presentation at the 23rd Annual Academic Surgical Congress.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Mohanraj D, John M, Malcom M, McKay S, Marrin A, Singh TP. Assessing Implicit Bias in the Clinical Decision-Making of Large Language Models. <em>Annual Academic Surgical Congress</em>. 23rd Annual Conference. Accepted.</li>
               </Tooltip>
             </ul>
           </div>
