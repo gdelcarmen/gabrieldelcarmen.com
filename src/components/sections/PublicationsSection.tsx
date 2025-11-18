@@ -267,48 +267,82 @@ const PublicationsSection = ({ isVisible }: SectionProps) => (
           </div>
           
           <div className="mb-8">
-            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Manuscripts Under Review</h3>
+            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Manuscripts Under Review &amp; In Progress</h3>
             <ul className="space-y-4 text-sm text-gray-600 font-light">
               <Tooltip
                 content={
                   <div>
                     <h4 className="font-medium mb-2">A Property-Based Framework for Evaluating the Onset of Moral Status</h4>
-                    <p className="mb-2">This philosophical analysis proposes a novel framework for determining moral status based on emergent properties rather than categorical classifications.</p>
-                    <p className="mb-2">Key contributions:</p>
+                    <p className="mb-2">Proposes an emergent-property framework to evaluate when moral status begins and how those thresholds guide clinical policy.</p>
                     <ul className="list-disc pl-4 mb-2">
-                      <li>Critically evaluates existing theories of moral status attribution</li>
-                      <li>Develops a graduated, property-based approach to moral consideration</li>
-                      <li>Applies the framework to contentious bioethical cases</li>
-                      <li>Addresses implications for clinical practice and policy development</li>
+                      <li>Tests traditional conception-based arguments against the new framework.</li>
+                      <li>Applies criteria to bioethical dilemmas, including embryo research and end-of-life care.</li>
+                      <li>Outlines implications for surgical counseling and institutional ethics committees.</li>
                     </ul>
-                    <p>Currently under review at <em>Bioethics</em>, a leading journal in bioethical theory and analysis.</p>
+                    <p>Submitted to <em>Bioethics</em> in October 2025.</p>
                   </div>
                 }
                 position="bottom"
                 width="max-w-md"
               >
-                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>. A Property-Based Framework for Evaluating the Onset of Moral Status. <em>Bioethics</em>. 2025 Mar 12. Submitted.</li>
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>. <strong>A Property-Based Framework for Evaluating the Onset of Moral Status.</strong> <em>Bioethics</em>. Submitted October 2025.</li>
               </Tooltip>
-              
+
               <Tooltip
                 content={
                   <div>
-                    <h4 className="font-medium mb-2">Bridging the Communication Gap: An Analysis of Google Translate and GPT-4o in English to Spanish Translation in Neurology</h4>
-                    <p className="mb-2">This study evaluates the accuracy and clinical safety of automated translation tools in neurological care.</p>
-                    <p className="mb-2">Research methodology:</p>
+                    <h4 className="font-medium mb-2">Bridging the Communication Gap in Neurology</h4>
+                    <p className="mb-2">Head-to-head comparison of Google Translate and GPT-4o for English-to-Spanish neurological phrase translation.</p>
                     <ul className="list-disc pl-4 mb-2">
-                      <li>Analysis of 120 standard neurological terms and phrases</li>
-                      <li>Comparative assessment of Google Translate and GPT-4o against certified medical translators</li>
-                      <li>Evaluation by bilingual neurologists for clinical accuracy</li>
-                      <li>Identification of high-risk mistranslations and error patterns</li>
+                      <li>120 standardized clinical prompts audited by bilingual neurologists.</li>
+                      <li>Accuracy, formality, and potential harm scoring frameworks.</li>
+                      <li>Recommendations for safe deployment of AI translation tools.</li>
                     </ul>
-                    <p>Submitted to <em>Patient Education and Counseling</em>, currently in the review process.</p>
+                    <p>Under review at <em>Patient Education and Counseling</em>; submitted February 2025.</p>
                   </div>
                 }
                 position="bottom"
                 width="max-w-md"
               >
-                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Alonzo BR, Cruz G. Bridging the Communication Gap: An Analysis of Google Translate and GPT-4o in English to Spanish Translation in Neurology. <em>Patient Education and Counseling</em>. 2025 Feb 28. Submitted.</li>
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Alonzo BR, Cruz G. <strong>Bridging the Communication Gap: An Analysis of Google Translate and GPT-4o in English to Spanish Translation in Neurology.</strong> <em>Patient Education and Counseling</em>. Under review.</li>
+              </Tooltip>
+
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Immunological Landscape Review</h4>
+                    <p className="mb-2">Collaborative review synthesizing innate and adaptive immune mechanisms in pre-cancerous colorectal lesions.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Maps immune microenvironment shifts along the adenoma–carcinoma sequence.</li>
+                      <li>Highlights intervention points for immunoprevention trials.</li>
+                      <li>Integrates single-cell and spatial transcriptomics data.</li>
+                    </ul>
+                    <p>Manuscript in preparation.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Schmit S, Vilar E. <strong>A Review of the Immunological Landscape for Pre-Cancerous Colorectal Lesions.</strong> Manuscript in preparation.</li>
+              </Tooltip>
+
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Reddit Bariatric vs. Medication Analysis</h4>
+                    <p className="mb-2">Mixed-methods analysis of Reddit discussions comparing bariatric surgery and GLP-1 medications.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Topic modeling to surface pre-op concerns and post-op satisfaction themes.</li>
+                      <li>Sentiment tracking by intervention type and timeline.</li>
+                      <li>Implications for patient education and counseling.</li>
+                    </ul>
+                    <p>Manuscript in preparation.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Patel D, Zaman JA. <strong>Pre-Operative Concerns and Post-Operative Satisfaction: Comparing Attitudes Towards Bariatric Surgery and Medication Intervention for Weight Loss on Reddit.</strong> Manuscript in preparation.</li>
               </Tooltip>
             </ul>
           </div>
@@ -316,6 +350,44 @@ const PublicationsSection = ({ isVisible }: SectionProps) => (
           <div className="mb-8">
             <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Conference Oral Presentations</h3>
             <ul className="space-y-4 text-sm text-gray-600 font-light">
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Benchmarking GPT Vision for Chest X-Ray Interpretation</h4>
+                    <p className="mb-2">Evaluates GPT’s radiology performance across zero-shot, one-shot, and few-shot learning setups.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>VinDr-CXR dataset benchmarking with accuracy, recall, and F1 tracking.</li>
+                      <li>Prompt engineering to pair imaging with clinical vignettes.</li>
+                      <li>Highlights opportunities for safe adoption of agentic computer vision tools.</li>
+                    </ul>
+                    <p>Accepted for oral presentation at the 23rd Annual Academic Surgical Congress.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Chen C, Shahbazov R. <strong>Benchmarking Robust Computer Vision Models: GPT’s Vision Capabilities in Radiological Interpretation of Chest X-Rays with Zero-Shot, One-Shot, and Few-Shot Learning.</strong> <em>Annual Academic Surgical Congress</em>. 23rd Annual Conference; Accepted for oral presentation.</li>
+              </Tooltip>
+
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Assessing Implicit Bias in Clinical LLMs</h4>
+                    <p className="mb-2">Tests GPT-4o decision support against vignette permutations to quantify bias patterns.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Systematically varies patient demographics within identical surgical cases.</li>
+                      <li>Measures treatment recommendations, counseling language, and confidence scoring.</li>
+                      <li>Discusses safeguards for algorithmic fairness in perioperative AI tools.</li>
+                    </ul>
+                    <p>Accepted for oral presentation at the 23rd Annual Academic Surgical Congress.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Mohanraj D, John M, Malcom M, McKay S, Marrin A, Singh TP. <strong>Assessing Implicit Bias in the Clinical Decision-Making of Large Language Models.</strong> <em>Annual Academic Surgical Congress</em>. 23rd Annual Conference; Accepted for oral presentation.</li>
+              </Tooltip>
+
               {/* Added ASC 2025 Presentation (Presented) */}
               <Tooltip
                 content={
@@ -450,6 +522,49 @@ const PublicationsSection = ({ isVisible }: SectionProps) => (
             </ul>
           </div>
           
+          <div className="mb-8">
+            <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Abstracts Under Consideration for Oral Presentation</h3>
+            <ul className="space-y-4 text-sm text-gray-600 font-light">
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">Reddit Bariatric vs. Medication SAGES Submission</h4>
+                    <p className="mb-2">Extends the Reddit analysis to a conference-ready dataset for SAGES 2026.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Compares perceptions of Roux-en-Y gastric bypass, sleeve gastrectomy, and GLP-1 medications.</li>
+                      <li>Highlights pre-operative concerns, motivators, and post-operative satisfaction themes.</li>
+                      <li>Positions social listening as an adjunct to surgical counseling.</li>
+                    </ul>
+                    <p>Under review for the Society of American Gastrointestinal and Endoscopic Surgeons (SAGES) 2026 meeting.</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Mohanraj D, John M, Malcom M, McKay S, Marrin A, Zaman J. <strong>Pre-Operative Concerns and Post-Operative Satisfaction: Comparing Attitudes Towards Bariatric Surgery and Medication Intervention for Weight Loss on Reddit.</strong> <em>SAGES 2026.</em> Under review.</li>
+              </Tooltip>
+
+              <Tooltip
+                content={
+                  <div>
+                    <h4 className="font-medium mb-2">MARCUS Emerging Technology Submission</h4>
+                    <p className="mb-2">Showcases the MARCUS retrieval-augmented system for SAGES Emerging Technology 2026.</p>
+                    <ul className="list-disc pl-4 mb-2">
+                      <li>Focuses on multi-tenant architecture for residency information centralization.</li>
+                      <li>Demonstrates version control, audit logging, and embedded citations.</li>
+                      <li>Outlines roadmap for multimodal expansion.</li>
+                    </ul>
+                    <p>Pending submission to the SAGES Emerging Technology session (2026).</p>
+                  </div>
+                }
+                position="bottom"
+                width="max-w-md"
+              >
+                <li className="cursor-help"><span className="font-medium">Del Carmen GA</span>, Shukla D, Zaman J. <strong>Multimodal Agentic Retrieval for Clinical Utility and Synthesis (MARCUS): A Retrieval-Augmented Generation System for Residency Information Centralization.</strong> <em>SAGES Emerging Technology 2026.</em> Pending submission.</li>
+              </Tooltip>
+            </ul>
+          </div>
+
           <div>
             <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3">Conference Poster Presentations</h3>
             <ul className="space-y-4 text-sm text-gray-600 font-light">

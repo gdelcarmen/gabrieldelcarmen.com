@@ -7,8 +7,9 @@ interface NavigationProps {
 }
 
 const Navigation = ({ activeSection, sections, onNavigate }: NavigationProps) => {
-  const left = sections.slice(0, 5);
-  const right = sections.slice(5);
+  const midpoint = Math.ceil(sections.length / 2);
+  const left = sections.slice(0, midpoint);
+  const right = sections.slice(midpoint);
 
   const renderLink = (section: NavSection) => (
     <li key={section.id} className="mr-4 md:mr-5 last:mr-0">
