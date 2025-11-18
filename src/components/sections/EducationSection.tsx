@@ -11,7 +11,7 @@ const EducationSection = ({ isVisible }: SectionProps) => (
     <div className="space-y-8">
       <div>
         <h3 className="text-base font-medium text-gray-900">Albany Medical Center, Albany, NY</h3>
-        <p className="text-sm text-gray-500 mt-1">General Surgery Resident, PGY-1 | Expected Graduation: 2029</p>
+        <p className="text-sm text-gray-500 mt-1">General Surgery Resident, PGY-2 | Expected Graduation: 2029</p>
       </div>
       <div>
         <h3 className="text-base font-medium text-gray-900">McGovern Medical School at UTHealth Houston, Houston, TX</h3>
@@ -25,10 +25,6 @@ const EducationSection = ({ isVisible }: SectionProps) => (
         <h3 className="text-base font-medium text-gray-900">Brandeis University, Waltham, MA</h3>
         <p className="text-sm text-gray-500 mt-1">B.S. Health: Science, Society, and Policy, B.A. Biology, B.A. Philosophy | 2015 – 2019</p>
         <p className="text-sm text-gray-600 mt-2 font-light">Graduated cum laude</p>
-      </div>
-      <div>
-        <h3 className="text-base font-medium text-gray-900">Harvard University Secondary School Program, Cambridge, MA</h3>
-        <p className="text-sm text-gray-500 mt-1">Summer Programs | 2013, 2014</p>
       </div>
     </div>
   </section>
