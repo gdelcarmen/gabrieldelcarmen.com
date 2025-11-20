@@ -7,7 +7,7 @@ const Header = () => (
             Gabriel del Carmen, MD
           </h1>
           <p className="text-sm text-gray-500 font-light">
-            General Surgery Resident (PGY-1) — Albany Medical Center | Expected Class of 2029
+            General Surgery Resident (PGY-2) — Albany Medical Center | Expected Class of 2029
           </p>
           <p className="text-xs text-gray-400 font-light mt-1">Last updated: November 2025</p>
         </div>
