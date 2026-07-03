@@ -100,8 +100,6 @@ const CVWebsite = () => {
       <Navigation sections={navSections} activeSection={activeSection} onNavigate={handleNavClick} />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
-        <CVHighlightsSection isVisible={isSectionVisible('cv-highlights')} />
-        <CurrentPositionSection isVisible={isSectionVisible('current-position')} />
         <EducationSection isVisible={isSectionVisible('education')} />
         <LicensureSection isVisible={isSectionVisible('licensure')} />
         <AboutSection isVisible={isSectionVisible('about')} />
