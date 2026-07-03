@@ -21,7 +21,7 @@ const LicensureSection = ({ isVisible }: SectionProps) => (
         <span className="font-medium text-gray-800">USMLE Step 2 CK</span> – Passed
       </li>
       <li>
-        <span className="font-medium text-gray-800">USMLE Step 3</span> – Planned for 2025
+        <span className="font-medium text-gray-800">USMLE Step 3</span> – Passed
       </li>
       <li>
         <span className="font-medium text-gray-800">Advanced Cardiovascular Life Support (ACLS)</span> – Expires October 2026

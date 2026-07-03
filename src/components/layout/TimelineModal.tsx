@@ -20,7 +20,7 @@ const TimelineModal = ({ onClose }: TimelineModalProps) => (
       <div className="overflow-x-auto">
         <div className="min-w-max">
           <div className="h-1 bg-gray-200 relative mb-8">
-            {[2015, 2017, 2019, 2020, 2021, 2023, 2024, 2025].map((year, index) => (
+            {[2015, 2017, 2019, 2020, 2021, 2023, 2024, 2026].map((year, index) => (
               <div key={year} className="absolute transform -translate-x-1/2" style={{ left: `${index * 14.28}%` }}>
                 <div className="h-3 w-3 rounded-full bg-blue-500 mb-2"></div>
                 <span className="text-xs text-gray-600">{year}</span>
@@ -41,7 +41,7 @@ const TimelineModal = ({ onClose }: TimelineModalProps) => (
 
             <div className="col-span-1 p-3 rounded bg-purple-50">
               <h3 className="text-sm font-medium text-gray-800">Albany Medical Center</h3>
-              <p className="text-xs text-gray-600">2024-Present</p>
+              <p className="text-xs text-gray-600">2024-Present · PGY-3</p>
             </div>
           </div>
 
