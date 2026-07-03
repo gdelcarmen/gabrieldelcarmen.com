@@ -3,10 +3,13 @@ import Header from './layout/Header';
 import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
 import TimelineModal from './layout/TimelineModal';
+import CVHighlightsSection from './sections/CVHighlightsSection';
+import CurrentPositionSection from './sections/CurrentPositionSection';
 import EducationSection from './sections/EducationSection';
 import LicensureSection from './sections/LicensureSection';
 import AboutSection from './sections/AboutSection';
 import PublicationsSection from './sections/PublicationsSection';
+import ConferencesSection from './sections/ConferencesSection';
 import ResearchSection from './sections/ResearchSection';
 import ProgrammingSection from './sections/ProgrammingSection';
 import ResearchInProgressSection from './sections/ResearchInProgressSection';
@@ -101,6 +104,7 @@ const CVWebsite = () => {
         <LicensureSection isVisible={isSectionVisible('licensure')} />
         <AboutSection isVisible={isSectionVisible('about')} />
         <PublicationsSection isVisible={isSectionVisible('publications')} />
+        <ConferencesSection isVisible={isSectionVisible('conferences')} />
         <ResearchSection isVisible={isSectionVisible('research')} />
         <ProgrammingSection isVisible={isSectionVisible('programming')} />
         <ResearchInProgressSection
