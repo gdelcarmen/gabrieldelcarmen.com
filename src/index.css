@@ -44,3 +44,27 @@ body {
 .max-h-90vh {
   max-height: 90vh;
 }
+@layer components {
+  section[id] {
+    scroll-margin-top: 5rem;
+    border: 1px solid rgb(226 232 240);
+    border-radius: 1.5rem;
+    background: rgb(255 255 255 / 0.92);
+    padding: 1.5rem;
+    box-shadow: 0 18px 45px rgb(15 23 42 / 0.06);
+  }
+
+  section[id] h2 {
+    color: rgb(15 23 42);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  section[id] h3 {
+    color: rgb(15 23 42);
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}

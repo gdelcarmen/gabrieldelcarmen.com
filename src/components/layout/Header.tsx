@@ -1,19 +1,37 @@
+const highlights = ['NCI Surgery Branch', 'Cancer immunotherapy', 'Clinical AI builder'];
+
 const Header = () => (
-  <header className="bg-slate-50 border-b border-slate-200 text-gray-800 py-10 px-6 shadow-sm">
-    <div className="max-w-4xl mx-auto flex justify-between items-center">
-      <div className="flex items-center">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-extralight tracking-wide mb-1 text-gray-700">
-            Gabriel del Carmen, MD
-          </h1>
-          <p className="text-sm text-gray-500 font-light">
-            General Surgery Resident (PGY-2) — Albany Medical Center | Expected Class of 2029
-          </p>
-          <p className="text-xs text-gray-400 font-light mt-1">Last updated: November 2025</p>
+  <header className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
+    <div className="absolute inset-0 opacity-20">
+      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-blue-500 blur-3xl" />
+      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-cyan-400 blur-3xl" />
+    </div>
+
+    <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 md:flex-row md:items-end md:justify-between">
+      <div className="max-w-3xl">
+        <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-blue-100 backdrop-blur">
+          Last updated: July 2026
+        </p>
+        <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
+          Gabriel del Carmen, MD
+        </h1>
+        <p className="mt-4 text-lg font-light leading-8 text-slate-200 md:text-xl">
+          Cancer Immunotherapy Research Fellow in the Surgery Branch at the National Cancer Institute,
+          National Institutes of Health; general surgery resident after completion of PGY-2 at Albany Medical Center.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {highlights.map((highlight) => (
+            <span key={highlight} className="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-100 ring-1 ring-white/15">
+              {highlight}
+            </span>
+          ))}
         </div>
       </div>
-      <div>
-        {/* Placeholder for future PDF CV integration */}
+
+      <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur md:min-w-64">
+        <p className="text-xs uppercase tracking-[0.2em] text-blue-100">Current appointment</p>
+        <p className="mt-2 text-base font-medium text-white">National Cancer Institute</p>
+        <p className="text-sm text-slate-300">Surgery Branch · NIH · Bethesda, MD</p>
       </div>
     </div>
   </header>
