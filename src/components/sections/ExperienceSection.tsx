@@ -10,6 +10,15 @@ const ExperienceSection = ({ isVisible }: SectionProps) => (
           <h2 className="text-xl font-light text-gray-800 pb-3 mb-5 border-b border-gray-100">Leadership Experience</h2>
           <div className="space-y-8">
             <div>
+              <h3 className="text-base font-medium text-gray-900">Albany Medical Center, Department of Surgery</h3>
+              <p className="text-sm text-gray-500 mt-1">General Surgery Resident | 2024 – Present</p>
+              <ul className="mt-2 text-sm text-gray-600 font-light space-y-1">
+                <li>• Provides acute care, trauma, and general surgery service coverage as part of a tertiary academic medical center</li>
+                <li>• Contributes to resident education, clinical quality improvement, and informatics projects designed for surgical teams</li>
+              </ul>
+            </div>
+
+            <div>
               <h3 className="text-base font-medium text-gray-900">Gold Humanism Honor Society, McGovern Medical School</h3>
               <p className="text-sm text-gray-500 mt-1">Internal Vice President | 2023 – 2024</p>
               <ul className="mt-2 text-sm text-gray-600 font-light space-y-1">
