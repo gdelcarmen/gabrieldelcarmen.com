@@ -10,6 +10,16 @@ const ResearchSection = ({ isVisible }: SectionProps) => (
           <h2 className="text-xl font-light text-gray-800 pb-3 mb-5 border-b border-gray-100">Research Experience</h2>
           <div className="space-y-8">
             <div>
+              <h3 className="text-base font-medium text-gray-900">Surgical Education & Clinical Informatics, Albany Medical Center</h3>
+              <p className="text-sm text-gray-500 mt-1">Resident Investigator | 2024 – Present</p>
+              <ul className="mt-2 text-sm text-gray-600 font-light space-y-1">
+                <li>• Develops clinician-facing software tools that support trauma workflows, residency curricula, and bedside decision-making</li>
+                <li>• Studies applications of AI, NLP, and computer vision in surgical education, clinical translation, and patient communication</li>
+                <li>• Leads projects focused on bias evaluation, multilingual clinical translation, and practical deployment of secure clinical decision support</li>
+              </ul>
+            </div>
+
+            <div>
               <h3 className="text-base font-medium text-gray-900">Vilar Lab, MD Anderson Cancer Center</h3>
               <p className="text-sm text-gray-500 mt-1">Research Associate | 2021 – 2024</p>
               <ul className="mt-2 text-sm text-gray-600 font-light space-y-1">
