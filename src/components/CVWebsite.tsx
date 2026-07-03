@@ -92,11 +92,11 @@ const CVWebsite = () => {
   const isSectionVisible = (sectionId: string) => Boolean(visibleSections[sectionId]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans antialiased">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased">
       <Header />
       <Navigation sections={navSections} activeSection={activeSection} onNavigate={handleNavClick} />
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <EducationSection isVisible={isSectionVisible('education')} />
         <LicensureSection isVisible={isSectionVisible('licensure')} />
         <AboutSection isVisible={isSectionVisible('about')} />
@@ -117,7 +117,7 @@ const CVWebsite = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setShowTimeline(!showTimeline)}
-          className="rounded-full p-3 shadow-lg transition-colors bg-white hover:bg-gray-100"
+          className="rounded-full border border-slate-200 bg-white p-3 shadow-lg transition-colors hover:bg-slate-100"
           aria-label="Toggle timeline view"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">

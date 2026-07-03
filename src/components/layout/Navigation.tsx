@@ -6,36 +6,31 @@ interface NavigationProps {
   onNavigate: (sectionId: string) => void;
 }
 
-const Navigation = ({ activeSection, sections, onNavigate }: NavigationProps) => {
-  const midpoint = Math.ceil(sections.length / 2);
-  const left = sections.slice(0, midpoint);
-  const right = sections.slice(midpoint);
+const Navigation = ({ activeSection, sections, onNavigate }: NavigationProps) => (
+  <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-xl">
+    <div className="mx-auto max-w-5xl px-4">
+      <ul className="flex gap-2 overflow-x-auto py-3 text-xs md:text-sm">
+        {sections.map((section) => {
+          const isActive = activeSection === section.id;
 
-  const renderLink = (section: NavSection) => (
-    <li key={section.id} className="mr-4 md:mr-5 last:mr-0">
-      <button
-        onClick={() => onNavigate(section.id)}
-        className={`${activeSection === section.id ? 'text-blue-700 font-medium' : 'text-gray-500'} transition-colors`}
-      >
-        {section.label}
-      </button>
-    </li>
-  );
-
-  return (
-    <nav className="sticky top-0 bg-white border-b border-gray-100 z-50 shadow-sm">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="flex justify-between">
-          <ul className="flex py-3 text-xs md:text-sm">
-            {left.map(renderLink)}
-          </ul>
-          <ul className="flex py-3 text-xs md:text-sm">
-            {right.map(renderLink)}
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
-};
+          return (
+            <li key={section.id} className="shrink-0">
+              <button
+                onClick={() => onNavigate(section.id)}
+                className={`rounded-full px-3 py-2 transition-all ${
+                  isActive
+                    ? 'bg-blue-700 text-white shadow-sm'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
+                }`}
+              >
+                {section.label}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </nav>
+);
 
 export default Navigation;
