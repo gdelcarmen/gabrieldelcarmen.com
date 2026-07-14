@@ -56,11 +56,11 @@ const ResearchInProgressSection = ({ isVisible, projects, onProjectClick }: Sect
           <button
             type="button"
             onClick={() => onProjectClick(index)}
-            className="bg-gray-50 p-5 rounded-lg text-left transition-all hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            className="border-t border-gray-200 py-5 text-left transition-colors hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
           >
             <h3 className="text-base font-medium text-gray-900 mb-2">{project.title}</h3>
             <p className="text-sm text-gray-600 font-light mb-2">{project.summary}</p>
-            <span className="text-xs text-blue-600 inline-flex items-center">
+            <span className="text-xs text-gray-500 inline-flex items-center">
               Learn more
               <svg
                 xmlns="http://www.w3.org/2000/svg"

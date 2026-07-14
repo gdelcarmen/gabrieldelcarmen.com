@@ -13,19 +13,19 @@ const TimelineModal = ({ onClose }: TimelineModalProps) => (
         <div className="min-w-max">
           <div className="h-1 bg-gray-200 relative mb-8">
             {[2015, 2017, 2019, 2020, 2021, 2024, 2025, 2026].map((year, index) => (
-              <div key={year} className="absolute transform -translate-x-1/2" style={{ left: `${index * 14.28}%` }}><div className="h-3 w-3 rounded-full bg-blue-500 mb-2" /><span className="text-xs text-gray-600">{year}</span></div>
+              <div key={year} className="absolute transform -translate-x-1/2" style={{ left: `${index * 14.28}%` }}><div className="h-3 w-3 rounded-full bg-gray-500 mb-2" /><span className="text-xs text-gray-600">{year}</span></div>
             ))}
           </div>
           <div className="grid grid-cols-8 gap-4">
-            <div className="col-span-2 p-3 rounded bg-blue-50"><h3 className="text-sm font-medium text-gray-800">Brandeis University</h3><p className="text-xs text-gray-600">2015–2019</p></div>
-            <div className="col-span-2 p-3 rounded bg-green-50"><h3 className="text-sm font-medium text-gray-800">McGovern Medical School</h3><p className="text-xs text-gray-600">2020–2024</p></div>
-            <div className="col-span-1 p-3 rounded bg-purple-50"><h3 className="text-sm font-medium text-gray-800">Albany Medical Center</h3><p className="text-xs text-gray-600">2024–2026 · PGY-2 completed</p></div>
-            <div className="col-span-1 p-3 rounded bg-indigo-50"><h3 className="text-sm font-medium text-gray-800">SurgicAI</h3><p className="text-xs text-gray-600">2025–Present</p></div>
-            <div className="col-span-2 p-3 rounded bg-cyan-50"><h3 className="text-sm font-medium text-gray-800">NCI Surgery Branch</h3><p className="text-xs text-gray-600">2026–Present</p></div>
+            <div className="col-span-2 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">Brandeis University</h3><p className="text-xs text-gray-600">2015–2019</p></div>
+            <div className="col-span-2 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">McGovern Medical School</h3><p className="text-xs text-gray-600">2020–2024</p></div>
+            <div className="col-span-1 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">Albany Medical Center</h3><p className="text-xs text-gray-600">2024–2026 · PGY-2 completed</p></div>
+            <div className="col-span-1 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">SurgicAI</h3><p className="text-xs text-gray-600">2025–Present</p></div>
+            <div className="col-span-2 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">NCI Surgery Branch</h3><p className="text-xs text-gray-600">2026–Present</p></div>
           </div>
           <div className="grid grid-cols-8 gap-4 mt-4">
-            <div className="col-span-3 p-3 rounded bg-yellow-50"><h3 className="text-sm font-medium text-gray-800">Research at Mass General Hospital</h3><p className="text-xs text-gray-600">2017–2020</p></div>
-            <div className="col-span-3 p-3 rounded bg-red-50"><h3 className="text-sm font-medium text-gray-800">Vilar Lab / Mayo Transplant Outcomes</h3><p className="text-xs text-gray-600">2021–2024</p></div>
+            <div className="col-span-3 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">Research at Mass General Hospital</h3><p className="text-xs text-gray-600">2017–2020</p></div>
+            <div className="col-span-3 border-t border-gray-200 p-3"><h3 className="text-sm font-medium text-gray-800">Vilar Lab / Mayo Transplant Outcomes</h3><p className="text-xs text-gray-600">2021–2024</p></div>
           </div>
         </div>
       </div>

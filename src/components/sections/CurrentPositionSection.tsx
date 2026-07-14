@@ -30,11 +30,11 @@ const CurrentPositionSection = ({ isVisible }: SectionProps) => (
     <h2 className="text-xl font-light text-gray-800 pb-3 mb-5 border-b border-gray-100">Current Position & Objectives</h2>
     <div className="grid gap-4 md:grid-cols-2">
       {positions.map((position) => (
-        <article key={position.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 className="text-base font-semibold text-slate-950">{position.title}</h3>
-          <p className="mt-1 text-sm text-slate-600">{position.institution}</p>
-          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">{position.dates}</p>
-          <p className="mt-1 text-sm text-slate-500">{position.location}</p>
+        <article key={position.title} className="border-t border-gray-200 py-4">
+          <h3 className="text-base font-medium text-gray-900">{position.title}</h3>
+          <p className="mt-1 text-sm text-gray-600">{position.institution}</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-gray-500">{position.dates}</p>
+          <p className="mt-1 text-sm text-gray-500">{position.location}</p>
         </article>
       ))}
     </div>
