@@ -7,9 +7,9 @@ interface NavigationProps {
 }
 
 const Navigation = ({ activeSection, sections, onNavigate }: NavigationProps) => (
-  <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-xl">
-    <div className="mx-auto max-w-5xl px-4">
-      <ul className="flex gap-2 overflow-x-auto py-3 text-xs md:text-sm">
+  <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white">
+    <div className="mx-auto max-w-4xl px-4">
+      <ul className="flex gap-5 overflow-x-auto py-3 text-xs md:text-sm">
         {sections.map((section) => {
           const isActive = activeSection === section.id;
 
@@ -17,10 +17,10 @@ const Navigation = ({ activeSection, sections, onNavigate }: NavigationProps) =>
             <li key={section.id} className="shrink-0">
               <button
                 onClick={() => onNavigate(section.id)}
-                className={`rounded-full px-3 py-2 transition-all ${
+                className={`border-b py-1 transition-colors ${
                   isActive
-                    ? 'bg-blue-700 text-white shadow-sm'
-                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
+                    ? 'border-gray-700 font-medium text-gray-800'
+                    : 'border-transparent text-gray-500 hover:text-gray-800'
                 }`}
               >
                 {section.label}

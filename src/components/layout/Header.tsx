@@ -1,37 +1,15 @@
-const highlights = ['NCI Surgery Branch', 'Cancer immunotherapy', 'Clinical AI builder'];
-
 const Header = () => (
-  <header className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
-    <div className="absolute inset-0 opacity-20">
-      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-blue-500 blur-3xl" />
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-cyan-400 blur-3xl" />
-    </div>
-
-    <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 md:flex-row md:items-end md:justify-between">
+  <header className="border-b border-gray-200 bg-white px-6 py-10 text-gray-800">
+    <div className="mx-auto max-w-4xl">
       <div className="max-w-3xl">
-        <p className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-blue-100 backdrop-blur">
-          Last updated: July 2026
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
+        <h1 className="mb-2 text-3xl font-extralight tracking-wide text-gray-700 md:text-4xl">
           Gabriel del Carmen, MD
         </h1>
-        <p className="mt-4 text-lg font-light leading-8 text-slate-200 md:text-xl">
+        <p className="text-sm font-light leading-6 text-gray-500">
           Cancer Immunotherapy Research Fellow in the Surgery Branch at the National Cancer Institute,
           National Institutes of Health; general surgery resident after completion of PGY-2 at Albany Medical Center.
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {highlights.map((highlight) => (
-            <span key={highlight} className="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-100 ring-1 ring-white/15">
-              {highlight}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="rounded-2xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur md:min-w-64">
-        <p className="text-xs uppercase tracking-[0.2em] text-blue-100">Current appointment</p>
-        <p className="mt-2 text-base font-medium text-white">National Cancer Institute</p>
-        <p className="text-sm text-slate-300">Surgery Branch · NIH · Bethesda, MD</p>
+        <p className="mt-2 text-xs font-light text-gray-400">Last updated: July 2026</p>
       </div>
     </div>
   </header>
