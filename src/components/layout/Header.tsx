@@ -1,17 +1,28 @@
+import { Fragment } from 'react';
+import { profile } from '../../data/profile';
+
 const Header = () => (
-  <header className="border-b border-gray-200 bg-white px-6 py-10 text-gray-800">
-    <div className="mx-auto max-w-4xl">
-      <div className="max-w-3xl">
-        <h1 className="mb-2 text-3xl font-extralight tracking-wide text-gray-700 md:text-4xl">
-          Gabriel del Carmen, MD
-        </h1>
-        <p className="text-sm font-light leading-6 text-gray-500">
-          Cancer Immunotherapy Research Fellow in the Surgery Branch at the National Cancer Institute,
-          National Institutes of Health; general surgery resident after completion of PGY-2 at Albany Medical Center.
-        </p>
-        <p className="mt-2 text-xs font-light text-gray-400">Last updated: July 2026</p>
-      </div>
-    </div>
+  <header className="pt-8 md:pt-11">
+    <div className="caps text-crimson">Curriculum vitae</div>
+    <h1 className="mt-3 text-balance text-[38px] font-bold leading-[1.06] tracking-[-0.012em] md:text-[clamp(38px,4.4vw,60px)]">
+      {profile.name}
+    </h1>
+    <p className="mt-4 text-[19px] leading-[1.4] md:text-[21px]">
+      {profile.roles.map((role, index) => (
+        <Fragment key={role.title}>
+          {index > 0 && ' and '}
+          {role.title}
+          <sup className="text-[0.6em]">{role.affiliation}</sup>
+        </Fragment>
+      ))}
+    </p>
+    <p className="mt-2.5 text-[15px] leading-normal text-body">
+      {profile.affiliations.map((affiliation, index) => (
+        <span key={affiliation} className="block">
+          <sup className="text-[0.7em]">{index + 1}</sup> {affiliation}
+        </span>
+      ))}
+    </p>
   </header>
 );
 
