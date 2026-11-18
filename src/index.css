@@ -2,52 +2,351 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Additional custom styles */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-serif text-ink antialiased;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  /* Jump targets land below the sticky running head. */
+  section[id],
+  figure[id],
+  li[id],
+  p[id],
+  button[id] {
+    scroll-margin-top: 64px;
+  }
+
+  a {
+    transition: color 0.12s ease-out;
+  }
+
+  a:hover {
+    @apply text-crimson;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.crimson');
+    outline-offset: 2px;
+  }
 }
 
-/* Additional typography styles for the prose class used in your CV */
-.prose {
-  max-width: 65ch;
-  color: #374151;
+@layer components {
+  .caps {
+    @apply font-sans text-[13px] font-bold uppercase tracking-[0.1em];
+  }
+
+  .section-heading {
+    @apply mb-2.5 text-[19px] font-bold leading-[1.3];
+  }
+
+  .link-crimson {
+    @apply text-crimson underline underline-offset-[3px];
+  }
+
+  .nav-link {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 6px;
+    transition: text-decoration-color 0.15s ease-out, color 0.15s ease-out;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    @apply text-crimson;
+    text-decoration-color: theme('colors.crimson');
+  }
+
+  /* A name with more behind it: the full entry opens from here. */
+  .term {
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline dotted theme('colors.crimson');
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    transition: color 0.12s ease-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .term:hover,
+  .term:focus-visible,
+  .term[aria-expanded='true'],
+  .term[aria-describedby] {
+    @apply text-crimson;
+  }
+
+  .cite {
+    @apply text-crimson underline underline-offset-2;
+  }
+
+  .references li {
+    transition: background-color 0.15s ease-out;
+  }
+
+  .references li:hover {
+    @apply bg-tint;
+  }
+
+  /* The card that hangs from whatever is highlighted, and its connector. */
+  .tooltip-card {
+    @apply absolute z-20 border border-ink bg-white px-3.5 py-3 text-left font-sans text-[13.5px] leading-[1.45] text-ink;
+    border-top: 2px solid theme('colors.crimson');
+    box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.14);
+    animation: card-in 0.14s ease-out both;
+  }
+
+  .tooltip-card.is-above {
+    border-top: 1px solid theme('colors.ink');
+    border-bottom: 2px solid theme('colors.crimson');
+    animation-name: card-in-above;
+  }
+
+  .tooltip-stem {
+    @apply pointer-events-none absolute z-[21] w-0.5 bg-crimson;
+    transform-origin: center top;
+    animation: stem-in 0.14s ease-out both;
+  }
+
+  .tooltip-stem.is-above {
+    transform-origin: center bottom;
+  }
+
+  /* Figures. */
+  .bar,
+  .mark {
+    transition: background-color 0.12s ease-out, border-color 0.12s ease-out, opacity 0.15s ease-out;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bar {
+    transform-origin: left center;
+  }
+
+  .bar:hover,
+  .bar.is-hot,
+  .mark:hover,
+  .mark.is-hot {
+    @apply bg-crimson;
+  }
+
+  .bar-hatched {
+    @apply border border-ink bg-white;
+    background-image: repeating-linear-gradient(135deg, theme('colors.ink') 0 2px, #ffffff 2px 6px);
+  }
+
+  .bar-hatched:hover,
+  .bar-hatched.is-hot {
+    @apply border-crimson bg-white;
+    background-image: repeating-linear-gradient(135deg, theme('colors.crimson') 0 2px, #ffffff 2px 6px);
+  }
+
+  /* A wider target than the mark itself. */
+  .mark::before {
+    content: '';
+    position: absolute;
+    inset: -6px -3px;
+  }
+
+  .is-dim {
+    opacity: 0.28;
+  }
+
+  .year {
+    transition: color 0.12s ease-out;
+  }
+
+  .year:hover,
+  .year.is-active {
+    @apply font-bold text-crimson;
+  }
+
+  /* Figures draw themselves the first time they scroll into view. */
+  .figure-armed .bar {
+    transform: scaleX(0);
+  }
+
+  .figure-in .bar {
+    animation: grow 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .wipe {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+
+  .figure-armed .wipe {
+    transform: scaleX(1);
+  }
+
+  .figure-in .wipe {
+    animation: wipe 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .reveal {
+    animation: reveal 0.22s ease-out both;
+  }
+
+  .chevron {
+    transition: transform 0.2s ease-out;
+  }
+
+  .running-label {
+    animation: swap 0.25s ease-out both;
+  }
+
+  /* A jump target is marked briefly so the eye can find it. */
+  li:target,
+  p:target,
+  .flash {
+    animation: flash 1.8s ease-out both;
+  }
 }
 
-.prose h4 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-weight: 600;
+@keyframes flash {
+  from {
+    background-color: rgba(163, 22, 33, 0.18);
+  }
+  to {
+    background-color: rgba(163, 22, 33, 0);
+  }
 }
 
-.prose p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
-.prose ul {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  padding-left: 1.625em;
+@keyframes wipe {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
 }
 
-.prose li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-/* Fix for max-height utility in timeline modal */
-.max-h-90vh {
-  max-height: 90vh;
-}
-section[id] {
-  scroll-margin-top: 5rem;
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-a {
-  text-underline-offset: 3px;
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes card-in-above {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes stem-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .figure-armed .bar {
+    transform: none;
+  }
+
+  .figure-armed .wipe {
+    transform: scaleX(0);
+  }
+}
+
+@media print {
+  @page {
+    margin: 16mm 14mm;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  a {
+    color: inherit !important;
+  }
+
+  .term {
+    text-decoration: none;
+  }
+
+  .bar,
+  .wipe,
+  .reveal {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .wipe {
+    display: none;
+  }
+
+  figure,
+  li,
+  p {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
 }

@@ -1,146 +1,88 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
+import type { SupplementId } from '../data/supplement';
+import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Navigation from './layout/Navigation';
-import Footer from './layout/Footer';
-import TimelineModal from './layout/TimelineModal';
-import CVHighlightsSection from './sections/CVHighlightsSection';
-import CurrentPositionSection from './sections/CurrentPositionSection';
-import EducationSection from './sections/EducationSection';
-import LicensureSection from './sections/LicensureSection';
-import AboutSection from './sections/AboutSection';
-import PublicationsSection from './sections/PublicationsSection';
-import ConferencesSection from './sections/ConferencesSection';
-import ResearchSection from './sections/ResearchSection';
-import ProgrammingSection from './sections/ProgrammingSection';
+import RunningHead from './layout/RunningHead';
+import AbstractSection from './sections/AbstractSection';
+import AuthorNoteSection from './sections/AuthorNoteSection';
+import FiguresSection from './sections/FiguresSection';
+import ReferencesSection from './sections/ReferencesSection';
 import ResearchInProgressSection from './sections/ResearchInProgressSection';
-import HonorsSection from './sections/HonorsSection';
-import ExperienceSection from './sections/ExperienceSection';
-import SkillsSection from './sections/SkillsSection';
-import ContactSection from './sections/ContactSection';
-import FutureProjectModal from './sections/FutureProjectModal';
-import { navSections } from '../data/navigation';
-import { futureProjectsData } from '../data/futureProjects';
+import ResearchSection from './sections/ResearchSection';
+import SoftwareSection from './sections/SoftwareSection';
+import SupplementSection from './sections/SupplementSection';
+import TrainingSection from './sections/TrainingSection';
+import { TooltipProvider } from './Tooltip';
+
+// Which supplementary section holds a given link target, if any.
+const supplementFor = (id: string): SupplementId | null => {
+  if (id === 's1' || /^(talk|poster)-\d+$/.test(id)) return 's1';
+  if (id === 's2' || id === 's3') return id;
+  return null;
+};
 
 const CVWebsite = () => {
-  const [activeSection, setActiveSection] = useState<string>(navSections[0].id);
-  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>(() =>
-    navSections.reduce<Record<string, boolean>>((acc, section) => {
-      acc[section.id] = true;
-      return acc;
-    }, {})
-  );
-  const [showTimeline, setShowTimeline] = useState(false);
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
+  const [openSupplement, setOpenSupplement] = useState<Record<SupplementId, boolean>>({
+    s1: false,
+    s2: false,
+    s3: false,
+  });
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute('id');
-          if (!id) {
-            return;
-          }
-
-          if (entry.isIntersecting) {
-            if (entry.intersectionRatio > 0.5) {
-              setActiveSection(id);
-            }
-
-            setVisibleSections((prev) => ({ ...prev, [id]: true }));
-          }
-        });
-      },
-      {
-        rootMargin: '-10% 0px -10% 0px',
-        threshold: [0.1, 0.5],
-      }
-    );
-
-    navSections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      navSections.forEach((section) => {
-        const element = document.getElementById(section.id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
+  const toggleSupplement = useCallback((id: SupplementId) => {
+    setOpenSupplement((previous) => ({ ...previous, [id]: !previous[id] }));
   }, []);
 
-  const handleNavClick = (sectionId: string) => {
-    setActiveSection(sectionId);
-    if (typeof document !== 'undefined') {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Open a supplementary section, then bring one of its entries into view and mark it.
+  const revealInSupplement = useCallback((part: SupplementId, targetId: string) => {
+    flushSync(() => setOpenSupplement((previous) => ({ ...previous, [part]: true })));
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    target.scrollIntoView({ block: 'center' });
+    target.classList.remove('flash');
+    void target.offsetWidth;
+    target.classList.add('flash');
+  }, []);
 
-  const handleProjectClick = (index: number) => {
-    setSelectedProjectIndex(index);
-  };
-
-  const closeProjectModal = () => {
-    setSelectedProjectIndex(null);
-  };
-
-  const isSectionVisible = (sectionId: string) => Boolean(visibleSections[sectionId]);
+  // Links that point into a closed supplementary section open it first.
+  useEffect(() => {
+    const openForHash = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const part = supplementFor(id);
+      if (!part) return;
+      if (id === part) setOpenSupplement((previous) => ({ ...previous, [part]: true }));
+      else revealInSupplement(part, id);
+    };
+    openForHash();
+    window.addEventListener('hashchange', openForHash);
+    return () => window.removeEventListener('hashchange', openForHash);
+  }, [revealInSupplement]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans antialiased">
+    <TooltipProvider className="mx-auto w-full max-w-[1040px] px-5 pb-10 sm:px-8 sm:pb-12">
+      <RunningHead />
+      <Navigation />
       <Header />
-      <Navigation sections={navSections} activeSection={activeSection} onNavigate={handleNavClick} />
-
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <EducationSection isVisible={isSectionVisible('education')} />
-        <LicensureSection isVisible={isSectionVisible('licensure')} />
-        <AboutSection isVisible={isSectionVisible('about')} />
-        <PublicationsSection isVisible={isSectionVisible('publications')} />
-        <ConferencesSection isVisible={isSectionVisible('conferences')} />
-        <ResearchSection isVisible={isSectionVisible('research')} />
-        <ProgrammingSection isVisible={isSectionVisible('programming')} />
-        <ResearchInProgressSection
-          isVisible={isSectionVisible('future')}
-          projects={futureProjectsData}
-          onProjectClick={handleProjectClick}
-        />
-        <HonorsSection isVisible={isSectionVisible('honors')} />
-        <ExperienceSection isVisible={isSectionVisible('experience')} />
-        <SkillsSection isVisible={isSectionVisible('skills')} />
-        <ContactSection isVisible={isSectionVisible('contact')} />
+      <main>
+        <AbstractSection />
+        <div className="mt-7 flex flex-wrap gap-x-10 gap-y-7 text-base md:mt-9">
+          <div className="min-w-0 flex-[1_1_380px]">
+            <TrainingSection />
+            <ResearchSection />
+          </div>
+          <div className="min-w-0 flex-[1_1_380px]">
+            <SoftwareSection />
+            <ResearchInProgressSection />
+          </div>
+        </div>
+        <FiguresSection onReveal={revealInSupplement} />
+        <ReferencesSection />
+        <SupplementSection open={openSupplement} onToggle={toggleSupplement} />
+        <AuthorNoteSection />
       </main>
-
-      <div className="fixed bottom-6 right-6 z-50">
-        <button
-          onClick={() => setShowTimeline(!showTimeline)}
-          className="rounded-full bg-white p-3 shadow-lg transition-colors hover:bg-gray-100"
-          aria-label="Toggle timeline view"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zM3 16a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z" />
-          </svg>
-        </button>
-      </div>
-
-      {showTimeline && <TimelineModal onClose={() => setShowTimeline(false)} />}
-
-      {selectedProjectIndex !== null && (
-        <FutureProjectModal
-          project={futureProjectsData[selectedProjectIndex]}
-          onClose={closeProjectModal}
-        />
-      )}
-
       <Footer />
-    </div>
+    </TooltipProvider>
   );
 };
 
