@@ -8,6 +8,9 @@ import { useHoverCapable } from '../hooks/useHoverCapable';
 export interface TooltipOptions {
   id: string;
   content: ReactNode;
+  // A shorter form of the content, used when the full card will not fit on
+  // the preferred side of its anchor.
+  compactContent?: ReactNode;
   // The pointer can move onto the card, so its links can be used.
   interactive?: boolean;
   width?: number;
@@ -45,7 +48,7 @@ interface TooltipContextValue {
 const TooltipContext = createContext<TooltipContextValue | null>(null);
 
 const CARD_ID = 'tooltip-card';
-const GAP = 12;
+const GAP = 10;
 const HIDE_DELAY = 140;
 // Height kept free at the top of the viewport for the sticky running head.
 const HEADROOM = 60;
@@ -63,7 +66,10 @@ export const TooltipProvider = ({ children, className }: TooltipProviderProps) =
   const hideTimer = useRef<number>();
   const [active, setActive] = useState<ActiveTooltip | null>(null);
   const [placement, setPlacement] = useState<Placement | null>(null);
+  // The card that has fallen back to its compact content, if any.
+  const [compactId, setCompactId] = useState<string | null>(null);
   const hoverCapable = useHoverCapable();
+  const compact = Boolean(active && active.compactContent && compactId === active.id);
 
   const cancelHide = useCallback(() => window.clearTimeout(hideTimer.current), []);
 
@@ -118,7 +124,16 @@ export const TooltipProvider = ({ children, className }: TooltipProviderProps) =
     const aboveBottom = Math.min(firstBox.top, clearRect ? clearRect.top : firstBox.top) - GAP;
     const fitsBelow = belowTop + height <= window.innerHeight - 8;
     const fitsAbove = aboveBottom - height >= HEADROOM;
-    const above = active.prefer === 'above' ? fitsAbove || !fitsBelow : !fitsBelow && fitsAbove;
+    const preferAbove = active.prefer === 'above';
+
+    // Rather than flip to the far side, where it may cover what it is
+    // describing, a card with a compact form tries that first.
+    if (active.compactContent && !compact && !(preferAbove ? fitsAbove : fitsBelow)) {
+      setCompactId(active.id);
+      return;
+    }
+
+    const above = preferAbove ? fitsAbove || !fitsBelow : !fitsBelow && fitsAbove;
 
     const box = above ? firstBox : lastBox;
     const stemX = clamp(box.left - rootRect.left + Math.min(box.width / 2, 22), innerLeft + 12, innerRight - 12);
@@ -142,7 +157,7 @@ export const TooltipProvider = ({ children, className }: TooltipProviderProps) =
         : next
     );
     // Keyed on what the card is and where it hangs, not on object identity.
-  }, [active?.id, active?.anchor]);
+  }, [active?.id, active?.anchor, compact]);
 
   // Close on Escape, on resize, and on a press anywhere else.
   useEffect(() => {
@@ -204,7 +219,7 @@ export const TooltipProvider = ({ children, className }: TooltipProviderProps) =
               onMouseEnter={active.interactive ? cancelHide : undefined}
               onMouseLeave={active.interactive ? () => hide(active.id) : undefined}
             >
-              {active.content}
+              {compact ? active.compactContent : active.content}
             </div>
           </div>
         )}

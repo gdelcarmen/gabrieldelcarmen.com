@@ -112,14 +112,18 @@ const countOutputs = (items: Output[]) =>
 const cardLabel = 'text-[11.5px] font-bold uppercase tracking-[0.08em] text-crimson';
 
 // What a year holds across both figures. The compact form leaves out the
-// list of titles, for where the card has less room.
+// list of titles and is short enough to sit between the two figures.
 const YearCard = ({ year, compact = false }: { year: number; compact?: boolean }) => {
   const rows = timelineRows.filter((row) => rowCoversYear(row, year));
   const items = outputs.filter((item) => item.year === year);
+  const figure2Label = `Figure 2 · ${items.length ? countOutputs(items) : 'nothing plotted'}`;
   return (
     <>
-      <div className="text-[15px] font-bold">{year}</div>
-      <div className={`mt-1.5 ${cardLabel}`}>Figure 1 · under way</div>
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="text-[15px] font-bold">{year}</span>
+        {compact && <span className={cardLabel}>{figure2Label}</span>}
+      </div>
+      <div className={`${compact ? 'mt-0.5' : 'mt-1.5'} ${cardLabel}`}>Figure 1 · under way</div>
       <ul>
         {rows.map((row) => (
           <li key={row.id} className="flex justify-between gap-3">
@@ -128,22 +132,28 @@ const YearCard = ({ year, compact = false }: { year: number; compact?: boolean }
           </li>
         ))}
       </ul>
-      <div className={`mt-2 ${cardLabel}`}>Figure 2 · {items.length ? countOutputs(items) : 'nothing plotted'}</div>
-      {compact && items.length > 0 ? null : items.length > 0 ? (
-        <ul>
-          {items.map((item) => (
-            <li key={item.id} className="truncate">
-              <span className="text-muted">
-                {capitalize(item.noun)}, {item.dateLabel}.
-              </span>{' '}
-              {item.title}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div className="text-muted">
-          {year < figure2Axis.start ? `Figure 2 begins in ${figure2Axis.start}.` : 'No dated papers, talks or posters.'}
-        </div>
+      {!compact && (
+        <>
+          <div className={`mt-2 ${cardLabel}`}>{figure2Label}</div>
+          {items.length > 0 ? (
+            <ul>
+              {items.map((item) => (
+                <li key={item.id} className="truncate">
+                  <span className="text-muted">
+                    {capitalize(item.noun)}, {item.dateLabel}.
+                  </span>{' '}
+                  {item.title}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="text-muted">
+              {year < figure2Axis.start
+                ? `Figure 2 begins in ${figure2Axis.start}.`
+                : 'No dated papers, talks or posters.'}
+            </div>
+          )}
+        </>
       )}
     </>
   );
@@ -171,6 +181,7 @@ const FiguresSection = ({ onReveal }: FiguresSectionProps) => {
   const yearOptions = (year: number, figure: 'f1' | 'f2'): TooltipOptions => ({
     id: `year-${figure}-${year}`,
     content: <YearCard year={year} compact={figure === 'f1'} />,
+    compactContent: figure === 'f2' ? <YearCard year={year} compact /> : undefined,
     width: 430,
     // Either way the card stays off the plot, so the highlighted year can be read.
     prefer: figure === 'f1' ? 'above' : 'below',
@@ -341,7 +352,7 @@ const FiguresSection = ({ onReveal }: FiguresSectionProps) => {
         </figcaption>
       </figure>
 
-      <figure id="figure-2" className="border-b border-t border-b-ink border-t-rule pb-[18px] pt-5">
+      <figure id="figure-2" className="border-b border-t border-b-ink border-t-rule pb-[18px] pt-6">
         <div ref={figure2Ref} className={`figure-${figure2Phase}`}>
           <div className="pl-[62px] md:pl-24">
             <div ref={plotRef} className="relative">
